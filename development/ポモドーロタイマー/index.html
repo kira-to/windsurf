@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pomodoro Timer</h1>
+        <div class="timer-container">
+            <div class="time-display">
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+            <div class="controls">
+                <button id="start">開始</button>
+                <button id="stop">停止</button>
+                <button id="reset">リセット</button>
+            </div>
+        </div>
+        <div class="session-type">
+            <div class="session-type-btn active" data-type="work">作業</div>
+            <div class="session-type-btn" data-type="short">短休憩</div>
+            <div class="session-type-btn" data-type="long">長休憩</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
