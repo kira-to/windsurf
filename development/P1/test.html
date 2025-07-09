@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TEST – CNP Q1</title>
+<style>
+  body{font-family:sans-serif;background:#f8fafc;margin:0;padding:2rem}
+  .card{max-width:400px;margin:auto;background:#fff;border-radius:16px;
+        box-shadow:0 4px 18px rgba(0,0,0,.08);padding:1.5rem}
+  label{display:block;background:#f1f5f9;padding:.6em 1em;border-radius:8px;
+        margin:.5em 0;cursor:pointer}
+  #next{width:100%;padding:.8em 0;border:none;border-radius:8px;font-size:1rem;
+        background:#38bdf8;color:#fff;opacity:.6}
+  #next:enabled{opacity:1}
+</style>
+</head>
+<body>
+<div class="card">
+  <h2>CNPキャラ診断 – Q1</h2>
+  <p>あなたの性格に一番近いものは？</p>
+
+  <label><input type="radio" name="ans" value="リーリー"> 穏やか</label>
+  <label><input type="radio" name="ans" value="ナルカミ"> 行動派</label>
+  <label><input type="radio" name="ans" value="ミタマ"> 感性派</label>
+  <label><input type="radio" name="ans" value="オロチ"> 論理派</label>
+
+  <button id="next" disabled>次へ</button>
+</div>
+
+<script>
+document.querySelectorAll('input[name="ans"]').forEach(r=>{
+  r.addEventListener('change', ()=>document.getElementById('next').disabled=false);
+});
+document.getElementById('next').addEventListener('click',()=>{
+  const v=document.querySelector('input[name="ans"]:checked').value;
+  alert('選択：'+v);
+});
+</script>
+</body>
+</html>
