@@ -9,29 +9,16 @@
 <body>
   <div class="container">
     <h1>CNPキャラ診断</h1>
-    <form id="quiz-form">
+    <form id="quiz-form" autocomplete="off">
       <div class="question">
-        <p>Q1. あなたの性格に一番近いものは？</p>
-        <label>
-          <input type="radio" name="answer" value="リーリー">
-          穏やかでみんなを和ませるタイプ
-        </label>
-        <label>
-          <input type="radio" name="answer" value="ナルカミ">
-          好奇心旺盛で行動力があるタイプ
-        </label>
-        <label>
-          <input type="radio" name="answer" value="ミタマ">
-          優しくて面倒見が良いタイプ
-        </label>
-        <label>
-          <input type="radio" name="answer" value="オロチ">
-          クールで論理的なタイプ
-        </label>
+        <label><input type="radio" name="answer" value="A">A</label>
+        <label><input type="radio" name="answer" value="B">B</label>
+        <label><input type="radio" name="answer" value="C">C</label>
+        <label><input type="radio" name="answer" value="D">D</label>
       </div>
       <button type="button" id="next-btn" disabled>次へ</button>
     </form>
+    <script src="main.js"></script>
   </div>
-  <script src="main.js"></script>
 </body>
 </html>
