@@ -3,22 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CNPキャラ診断</title>
+  <title>CNPキャラ診断 | 表紙</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .hero{max-width:400px;margin:40px auto;padding:2rem 1.5rem;
+          background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);text-align:center}
+    .hero h1{font-size:1.6rem;margin-bottom:.8rem}
+    .hero p{line-height:1.6;margin-bottom:1.2rem}
+    .start-btn{display:inline-block;padding:.8em 2em;border:none;border-radius:8px;
+               font-size:1.1rem;font-weight:bold;background:#38bdf8;color:#fff;
+               text-decoration:none}
+      /* 四隅キャラ画像 */
+    .corner-img {
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero {
+      position: relative;
+      overflow: visible;
+    }
+    .corner-tl { top: -24px; left: -24px; }
+    .corner-tr { top: -24px; right: -24px; }
+    .corner-bl { bottom: -24px; left: -24px; }
+    .corner-br { bottom: -24px; right: -24px; }
+  </style>
 </head>
 <body>
-  <div class="container">
+  <div class="hero">
+    <!-- hero四隅キャラ画像 -->
+    <img src="assets/Leelee.avif" alt="Leelee" class="corner-img corner-tl">
+    <img src="assets/Mitama.avif" alt="Mitama" class="corner-img corner-tr">
+    <img src="assets/Narukami.avif" alt="Narukami" class="corner-img corner-bl">
+    <img src="assets/Orochi.avif" alt="Orochi" class="corner-img corner-br">
     <h1>CNPキャラ診断</h1>
-    <form id="quiz-form" autocomplete="off">
-      <div class="question">
-        <label><input type="radio" name="answer" value="A">A</label>
-        <label><input type="radio" name="answer" value="B">B</label>
-        <label><input type="radio" name="answer" value="C">C</label>
-        <label><input type="radio" name="answer" value="D">D</label>
-      </div>
-      <button type="button" id="next-btn" disabled>次へ</button>
-    </form>
-    <script src="main.js"></script>
+    <p>
+      5つの質問に答えるだけで、<br>
+      あなたと波長が合う <strong>CNPキャラクター</strong> がわかります。<br>
+      結果は画像付きでSNSシェアもOK！
+    </p>
+    <a href="quiz.html" class="start-btn">診断をはじめる ▶</a>
   </div>
 </body>
 </html>
