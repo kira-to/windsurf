@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>トワとセツナ ナンバーグリモワール</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="scene">
+    <div class="book" id="book">
+      <div class="cover" id="cover">
+        <img src="img/cover.png" alt="魔導書表紙" width="320" height="220">
+      </div>
+      <div class="page" id="page">
+        <span id="loading">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <div id="game-ui" class="hide">
+    <div id="logo">
+      <span class="jp">トワとセツナ</span><br>
+      <span class="en">Grimoire of Numbers</span>
+    </div>
+    <input id="guess" type="number" min="1" max="100" autocomplete="off" placeholder="1〜100">
+    <button class="primary" id="btn-guess">決定</button>
+    <button id="again" style="display:none;">もう一度あそぶ</button>
+    <div id="log">1〜100 の整数を当てて！</div>
+    <img src="img/setsuna.png" id="setsuna" class="char hide" alt="セツナ">
+    <img src="img/towa.png" id="towa" class="char hide" alt="トワ">
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>
