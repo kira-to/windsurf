@@ -8,22 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="scene">
-    <div class="book" id="book">
-      <div class="cover front"><img src="img/cover.png" alt="魔導書表紙"></div>
-      <div class="page p1"><img src="img/page.jpg" alt="ページ"></div>
-      <div class="page p2"><img src="img/page.jpg" alt="ページ"></div>
-      <div class="page p3"><img src="img/page.jpg" alt="ページ"></div>
-      <div class="cover back"></div>
-    </div>
-  </div>
-   <div id="game-ui" class="hide">
+  <div class="main-head">
     <div id="logo">
       <div class="jp-title">トワとセツナ　ナンバーグリモワール</div>
       <div class="en-logo">
         <span class="neon">Grimoire</span> <span class="en-sub">of</span> <span class="neon">Numbers</span>
       </div>
     </div>
+    <div class="scene">
+      <div class="book" id="book">
+      <div class="cover front"><img src="img/cover.png" alt="魔導書表紙"></div>
+      <div class="page p1"><img src="img/page.jpg" alt="ページ"></div>
+      <div class="page p2"><img src="img/page.jpg" alt="ページ"></div>
+      <div class="page p3"><img src="img/page.jpg" alt="ページ"></div>
+      <div class="cover back"></div>
+    </div>
+    </div>
+  </div>
+</div>
+   <div id="game-ui" class="hide">
     <input id="guess" type="number" min="1" max="100" autocomplete="off" placeholder="1〜100">
     <button class="primary" id="btn-guess">決定</button>
     <button id="again" style="display:none;">もう一度あそぶ</button>
