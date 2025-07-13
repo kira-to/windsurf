@@ -198,11 +198,88 @@ img.char {
 .scene {
   width: 100vw; height: 100vh;
   display: flex; align-items: center; justify-content: center;
-  perspective: 1000px;
+  perspective: 1200px;
   position: fixed; top: 0; left: 0;
   z-index: 100;
   background: none;
 }
+.book {
+  width: 340px; height: 230px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1.2s cubic-bezier(.7,1.2,.3,1);
+  box-shadow: 0 12px 40px #000d, 0 0 0 6px #00e0ff33;
+  border-radius: 20px 20px 32px 32px;
+  background: none;
+}
+.cover {
+  position: absolute; width: 100%; height: 100%;
+  background: linear-gradient(135deg,#0e223b 60%,#0ff2 100%);
+  border-radius: 18px 18px 30px 30px;
+  box-shadow: 0 8px 32px #000a, 0 0 0 4px #00e0ff44, 0 0 64px 8px #00e0ff22 inset;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+  overflow: hidden;
+  border: 2px solid #00e0ff88;
+}
+.cover img {
+  width: 82%; height: auto; pointer-events: none;
+  filter: drop-shadow(0 0 16px #00e0ff88) drop-shadow(0 0 32px #fff4);
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  width: 78%; height: 78%;
+  background: radial-gradient(circle, #00e0ff44 0%, #fff0 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+.page {
+  position: absolute; width: 100%; height: 100%;
+  background: none;
+  border-radius: 16px 16px 28px 28px;
+  box-shadow: 0 4px 16px #0004, 0 0 32px #00e0ff33 inset;
+  left: 0; top: 0;
+  z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  color: #e6f4ff;
+  overflow: hidden;
+}
+.page-bg {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.93;
+  pointer-events: none;
+}
+.page .magic-circle,
+.page #loading {
+  position: relative;
+  z-index: 1;
+}
+
+.page .magic-circle {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  width: 78%; height: 78%;
+  z-index: 1;
+  opacity: 0.82;
+  pointer-events: none;
+  filter: drop-shadow(0 0 32px #00e0ff99);
+  animation: magicGlow 2.7s infinite alternate cubic-bezier(.7,0,1,.9);
+}
+@keyframes magicGlow {
+  0% { filter: drop-shadow(0 0 16px #00e0ff99); opacity: 0.8; }
+  100% { filter: drop-shadow(0 0 48px #fff8); opacity: 1; }
+}
+
 .book {
   width: 340px; height: 230px;
   position: relative;
