@@ -219,7 +219,19 @@ img.char {
 .page.p2   { transform: translateZ(2px) rotateY(-180deg); }
 .page.p3   { transform: translateZ(0px) rotateY(-180deg); }
 .cover.back{ background: #222; transform: translateZ(-2px) rotateY(180deg); border-radius: 18px 18px 30px 30px; box-shadow: 0 8px 32px #000a; }
-.page { background: url('img/page.jpg') center/cover no-repeat; box-shadow: 0 4px 16px #0004, 0 0 32px #00e0ff33 inset; border-radius: 16px 16px 28px 28px; }
+.page { background: url('img/page.jpg') center/cover no-repeat; box-shadow: 0 4px 16px #0004, 0 0 32px #00e0ff33 inset; border-radius: 16px 16px 28px 28px; position: relative; }
+.page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('img/page.jpg') center/cover no-repeat;
+  border-radius: 16px 16px 28px 28px;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
 
 @keyframes cover-open{to{transform:translateZ(6px) rotateY(-180deg);}}
 @keyframes page-flip {to{transform:rotateY(0deg);}}
