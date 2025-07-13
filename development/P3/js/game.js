@@ -108,6 +108,19 @@ hideChar();
 // ページ遷移時もキャラ非表示
 window.onpageshow = hideChar;
 
+// 魔導書3Dオープニング（3枚ページめくり＆UIフェード）
+window.addEventListener('load', ()=>{
+  const book = document.getElementById('book');
+  const ui   = document.getElementById('game-ui');
+
+  // 表紙を自動で開く（クリック式にしたい場合は click イベントに変更）
+  book.classList.add('open');
+
+  // 最後のページ（p3）アニメ終了でゲーム UI 表示
+  document.querySelector('.page.p3')
+    .addEventListener('animationend', ()=> ui.classList.remove('hide'), { once:true });
+});
+
 // 魔導書オープニング演出
 function openBookAnimation() {
   // クリックまたは自動で開く

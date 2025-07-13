@@ -10,31 +10,35 @@
 <body>
   <div class="scene">
     <div class="book" id="book">
-      <div class="cover" id="cover">
-        <img src="img/cover.png" alt="魔導書表紙" width="320" height="220">
-      </div>
-      <div class="page" id="page">
-        <img src="img/page.jpg" class="page-bg" alt="ページ背景">
-        <svg class="magic-circle" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="160" cy="110" rx="95" ry="60" stroke="#00e0ff" stroke-width="3" fill="none"/>
-          <ellipse cx="160" cy="110" rx="75" ry="47" stroke="#fff" stroke-width="1.5" fill="none"/>
-          <ellipse cx="160" cy="110" rx="55" ry="34" stroke="#00e0ff" stroke-width="1.2" fill="none"/>
-          <circle cx="160" cy="110" r="18" stroke="#fff" stroke-width="1.2" fill="none"/>
-          <g opacity="0.7">
-            <text x="160" y="117" text-anchor="middle" font-size="16" fill="#e6f4ff" font-family="serif" letter-spacing="2">✶ ✵ ✷ ✸ ✹ ✺ ✻ ✼</text>
-          </g>
-        </svg>
-        <span id="loading">Loading...</span>
-      </div>
+      <div class="cover front"></div>
+      <div class="page p1"></div>
+      <div class="page p2"></div>
+      <div class="page p3"></div>
+      <div class="cover back"></div>
     </div>
   </div>
-  <div id="game-ui" class="hide">
+   <div id="game-ui" class="hide">
     <div id="logo">
       <div class="jp-title">トワとセツナ　ナンバーグリモワール</div>
       <div class="en-logo">
         <span class="neon">Grimoire</span> <span class="en-sub">of</span> <span class="neon">Numbers</span>
       </div>
     </div>
+    <input id="guess" type="number" min="1" max="100" autocomplete="off" placeholder="1〜100">
+    <button class="primary" id="btn-guess">決定</button>
+    <button id="again" style="display:none;">もう一度あそぶ</button>
+    <div id="log">1〜100 の整数を当てて！</div>
+    <div id="char-area">
+      <div id="setsuna-area" class="char-area hide">
+        <img src="img/setsuna.png" id="setsuna" class="char" alt="セツナ">
+        <div class="balloon" id="setsuna-balloon"></div>
+      </div>
+      <div id="towa-area" class="char-area hide">
+        <img src="img/towa.png" id="towa" class="char" alt="トワ">
+        <div class="balloon" id="towa-balloon"></div>
+      </div>
+    </div>
+  </div>
     <input id="guess" type="number" min="1" max="100" autocomplete="off" placeholder="1〜100">
     <button class="primary" id="btn-guess">決定</button>
     <button id="again" style="display:none;">もう一度あそぶ</button>
