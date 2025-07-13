@@ -37,17 +37,44 @@ button.primary:hover {
 #again {
   display: none;
 }
-#logo .jp {
+#logo {
+  margin-bottom: 1.6rem;
+}
+.jp-title {
   font-family: 'Kiwi Maru', serif;
-  font-size: 2.1rem;
-  letter-spacing: .2em;
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: .13em;
+  color: #e6f4ff;
+  text-shadow: 0 2px 16px #00e0ff55, 0 1px 0 #222;
+  margin-bottom: .5rem;
 }
-#logo .en {
+.en-logo {
   font-family: 'Cinzel Decorative', serif;
-  font-size: 1.2rem;
-  letter-spacing: .1em;
-  color: #00e0ff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4em;
 }
+.neon {
+  color: #00e0ff;
+  text-shadow: 0 0 10px #00e0ff, 0 0 24px #0ff6, 0 1px 1px #fff;
+  font-size: 1.5em;
+  letter-spacing: .09em;
+  font-family: 'Cinzel Decorative', serif;
+  font-style: italic;
+}
+.en-sub {
+  color: #e6f4ff;
+  font-size: 1.1em;
+  opacity: 0.8;
+  margin: 0 .25em;
+  font-family: 'Cinzel Decorative', serif;
+}
+
 #log {
   margin: 1.2rem auto .6rem;
   padding: .7rem 1.3rem;
@@ -59,11 +86,23 @@ button.primary:hover {
   font-size: 1.1rem;
   box-shadow: 0 0 10px rgba(0,224,255,.2);
 }
+#char-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  min-height: 200px;
+}
+.char-area {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1.2rem;
+}
 img.char {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
   width: 160px;
   max-width: 45vw;
   pointer-events: none;
@@ -75,6 +114,79 @@ img.char {
   pointer-events: none;
 }
 .jump {
+  animation: jumpChar .7s cubic-bezier(.2,1.2,.5,1) 1;
+}
+.balloon {
+  min-width: 7.5em;
+  max-width: 16em;
+  margin-left: 1.2em;
+  margin-bottom: 2.2em;
+  padding: 0.7em 1.2em;
+  background: linear-gradient(135deg,#0ff4,#00e0ffcc 70%,#fff2 100%);
+  color: #0d0d2b;
+  border-radius: 1.6em 1.6em 1.6em 0.5em/2em 2em 2em 0.7em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 12px #00e0ff33;
+  position: relative;
+  opacity: 0.97;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+/* セツナは画像の右側、トワは画像の左側に吹き出し */
+#setsuna-area .balloon {
+  order: 2;
+  margin-left: 1.2em;
+  margin-right: 0;
+  border-radius: 1.6em 1.6em 1.6em 0.5em/2em 2em 2em 0.7em;
+}
+#towa-area {
+  flex-direction: row-reverse;
+}
+#towa-area .balloon {
+  order: 2;
+  margin-right: 1.2em;
+  margin-left: 0;
+  border-radius: 1.6em 1.6em 0.5em 1.6em/2em 2em 0.7em 2em;
+  text-align: right;
+}
+.balloon:before {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg,#0ff4,#00e0ffcc 70%,#fff2 100%);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  z-index: 1;
+  left: 1.2em;
+}
+#towa-area .balloon:before {
+  left: auto;
+  right: 1.2em;
+  transform: scaleX(-1);
+}
+.balloon:before {
+  content: "";
+  position: absolute;
+  left: 1.2em;
+  bottom: -18px;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg,#0ff4,#00e0ffcc 70%,#fff2 100%);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  z-index: 1;
+}
+#game-ui {
+  position: relative;
+  z-index: 10;
+  margin-top: 5vh;
+  transition: opacity .8s;
+}
+#game-ui.hide {
+  opacity: 0;
+  pointer-events: none;
   animation: jumpChar .7s cubic-bezier(.2,1.2,.5,1) 1;
 }
 @keyframes jumpChar {
